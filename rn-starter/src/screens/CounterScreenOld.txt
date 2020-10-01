@@ -1,0 +1,33 @@
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
+
+
+const CounterScreen = () => {
+
+    // // This won't updae
+    // let counter = 0;
+
+    // State variable (from React): allows variable to change
+    // Initialize new state (0 is default value)
+        // counter: first elememnt of useState
+        // setCounter: second element of useState
+    const [counter, setCounter] = useState(0);
+
+    return <View>
+        <Button title="Increase" onPress={() => {
+            // Don't do this!
+            // counter++;
+            setCounter(counter + 1);
+        }}/>
+        <Button title="Decrease" onPress={() => {
+            // counter--;
+            setCounter(counter - 1);
+        }}/>
+        <Text>Current Count: {counter}</Text>
+    </View>
+
+};
+
+const styles = StyleSheet.create({});
+
+export default CounterScreen;
